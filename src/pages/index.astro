@@ -1,8 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import SiteBanner from '../components/SiteBanner.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import laserSetiLogo from '../assets/site/laser-seti-logo.png';
+import milkyWayNightSky from '../assets/site/milky-way-night-sky.jpg';
+import stationPortraitTwo from '../assets/site/laser-seti-station-portrait-2.png';
 ---
 
 <!doctype html>
@@ -10,40 +14,408 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+	<body class="home-page">
+		<!--
+		THESIS: Signal Horizon makes the survey's continuous sky coverage tangible; it refuses a conventional centered marketing stack.
+		OWN-WORLD: Nocturnal navy field, cyan calibration rules, coral action, condensed Rajdhani display, and real field-equipment photography.
+		STORY: Visitors identify LaserSETI, understand its all-sky optical survey, and can help the project.
+		FIRST VIEWPORT: A thin navigation rail, viewport-wide headline and spectral trace lead into copy, actions, and a wide-plus-vertical image horizon.
+		FORM: Approved Signal Horizon composition; selected mock 02-direction.png.
+		FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+		-->
+		<SiteBanner />
+		<main class="signal-hero">
+			<nav class="signal-nav" aria-label="Primary navigation">
+				<a class="signal-brand" href="/" aria-label="LaserSETI home">
+					<Image src={laserSetiLogo} alt="LaserSETI" />
+				</a>
+				<div class="signal-links">
+					<a aria-current="page" href="/">Home</a>
+					<a href="/instrument">LaserSETI</a>
+					<a href="/observatories">Observatories</a>
+					<a href="/blog">Updates</a>
+					<a href="/support">Help</a>
+				</div>
+			</nav>
+
+			<section class="signal-stage" aria-labelledby="signal-title">
+				<h1 id="signal-title">All the <span>Sky,</span> All the Time</h1>
+
+				<div class="spectral-line" aria-hidden="true">
+					<svg viewBox="0 0 1200 32" preserveAspectRatio="none">
+						<path class="spectral-base" d="M0 16H1200" />
+						<path class="spectral-wave" d="M0 16h180l8-1 4-8 4 18 4-9h128l5-3 4 6 5-3h118l4-10 5 20 5-14 4 4h108l5-2 4 4 5-2h142l4-12 5 26 5-14h180l4-4 5 8 5-4h126" />
+						<circle cx="600" cy="16" r="5.5" />
+						<g class="spectral-ticks">
+							<path d="M34 12v8M68 13v6M102 12v8M136 13v6M170 12v8M238 13v6M272 12v8M306 13v6M374 12v8M408 13v6M442 12v8M476 13v6M510 12v8M544 13v6M578 12v8M622 12v8M656 13v6M690 12v8M724 13v6M758 12v8M792 13v6M826 12v8M860 13v6M894 12v8M928 13v6M962 12v8M996 13v6M1030 12v8M1064 13v6M1098 12v8M1132 13v6M1166 12v8" />
+						</g>
+					</svg>
+				</div>
+
+				<div class="signal-intro">
+					<p>
+						LaserSETI is a project, instrument, and set of observatories designed to scan all the sky, all the time for extrasolar laser pulses. That is to say, it’s an optical SETI survey.
+					</p>
+					<div class="signal-actions">
+						<a class="signal-primary" href="/support">Help LaserSETI</a>
+					</div>
+				</div>
+
+				<div class="signal-imagery" aria-label="LaserSETI field equipment">
+					<div class="signal-landscape">
+						<Image class="signal-landscape-base" src={milkyWayNightSky} alt="Milky Way stretching across a densely starred night sky" widths={[720, 1080, 1440, 1920]} sizes="100vw" />
+					</div>
+					<div class="signal-detail">
+						<Image src={stationPortraitTwo} alt="Open LaserSETI station showing its paired optical instruments and field electronics" widths={[360, 540, 720]} sizes="(max-width: 720px) 42vw, 22vw" />
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	:global(.home-page) {
+		background: var(--color-night);
+		color: var(--color-hero-ink);
+		font-family: var(--font-body);
+	}
+
+	.signal-hero {
+		isolation: isolate;
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0 var(--hero-gutter);
+		background:
+			linear-gradient(90deg, rgb(37 199 217 / 0.025) 1px, transparent 1px) 0 0 / 5rem 100%,
+			var(--color-night);
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+
+	.signal-nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 4.3rem;
+		border-bottom: 1px solid var(--hero-rule);
+	}
+
+	.signal-brand {
+		display: block;
+		width: clamp(8rem, 13vw, 11rem);
+		padding: 0.75rem 0;
+		line-height: 0;
+	}
+
+	.signal-brand :global(img) {
+		display: block;
+		width: 100%;
+		border-radius: 0;
+		filter: grayscale(1) brightness(0) invert(1);
+	}
+
+	.signal-links {
+		display: flex;
+		align-items: stretch;
+		gap: clamp(1.2rem, 4vw, 4.8rem);
+		font-family: var(--font-display);
+		font-size: clamp(0.86rem, 1.25vw, 1.08rem);
+		line-height: 1;
+	}
+
+	.signal-links a {
+		position: relative;
+		display: grid;
+		place-items: center;
+		min-height: 4.3rem;
+		color: var(--color-cyan);
+		text-decoration: none;
+	}
+
+	.signal-links a::after {
+		content: '';
+		position: absolute;
+		inset: auto 0 -1px;
+		height: 2px;
+		background: var(--color-cyan);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 180ms ease-out;
+	}
+
+	.signal-links a:hover::after,
+	.signal-links a:focus-visible::after,
+	.signal-links a[aria-current='page']::after {
+		transform: scaleX(1);
+	}
+
+	.signal-links a:focus-visible,
+	.signal-brand:focus-visible,
+	.signal-actions a:focus-visible {
+		outline: 2px solid var(--color-yellow);
+		outline-offset: 4px;
+	}
+
+	.signal-stage {
+		padding-top: clamp(3.6rem, 7vw, 7rem);
+	}
+
+	.signal-stage h1 {
+		max-width: none;
+		margin: 0;
+		color: var(--color-cyan);
+		font-family: var(--font-display);
+		font-size: clamp(3.25rem, 8.15vw, 8rem);
+		font-weight: 600;
+		line-height: 0.82;
+		letter-spacing: -0.035em;
+		text-align: center;
+		text-transform: uppercase;
+		text-wrap: nowrap;
+	}
+
+	.signal-stage h1 span {
+		color: var(--color-coral);
+	}
+
+	.spectral-line {
+		height: clamp(1.8rem, 3vw, 2.4rem);
+		margin-top: clamp(1.35rem, 2.2vw, 2.2rem);
+		color: var(--color-cyan);
+	}
+
+	.spectral-line svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+	}
+
+	.spectral-line path,
+	.spectral-line circle {
+		fill: none;
+		stroke: currentColor;
+		vector-effect: non-scaling-stroke;
+	}
+
+	.spectral-base { opacity: 0.58; }
+	.spectral-wave { stroke-width: 1.25; }
+	.spectral-ticks { opacity: 0.72; }
+	.spectral-line circle { stroke-width: 1.25; }
+
+	.signal-intro {
+		display: grid;
+		grid-template-columns: minmax(19rem, 35rem) minmax(14rem, 19rem);
+		justify-content: center;
+		gap: clamp(2.5rem, 6vw, 6.5rem);
+		padding: clamp(1.1rem, 2vw, 1.7rem) 0 clamp(2rem, 4vw, 3.6rem);
+	}
+
+	.signal-intro p {
+		margin: 0;
+		color: var(--color-hero-ink);
+		font-size: clamp(1rem, 1.25vw, 1.22rem);
+		line-height: 1.55;
+	}
+
+	.signal-actions {
+		display: grid;
+		align-content: start;
+		gap: 1rem;
+	}
+
+	.signal-actions a {
+		font-family: var(--font-display);
+		font-weight: 600;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.signal-primary {
+		padding: 0.85rem 1.25rem;
+		border: 1px solid var(--color-coral);
+		background: var(--color-coral);
+		color: var(--color-night);
+		font-size: 1.05rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		transition: background-color 180ms ease-out, color 180ms ease-out;
+	}
+
+	.signal-primary:hover {
+		background: transparent;
+		color: var(--color-coral);
+	}
+
+	.signal-secondary {
+		color: var(--color-cyan);
+		font-size: 1rem;
+	}
+
+	.signal-secondary span {
+		display: inline-block;
+		margin-left: 0.4rem;
+		transition: transform 180ms ease-out;
+	}
+
+	.signal-secondary:hover span { transform: translateX(0.25rem); }
+
+	.signal-imagery {
+		position: relative;
+		min-height: clamp(24rem, 48vw, 42rem);
+		margin: 0 calc(var(--hero-gutter) * -1);
+		border-top: 1px solid var(--color-cyan);
+		background: #0d1c28;
+	}
+
+	.signal-imagery::before {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		inset: -1.15rem 0 auto;
+		height: 2.3rem;
+		background: repeating-linear-gradient(90deg, transparent 0 2rem, var(--color-cyan) 2rem calc(2rem + 1px));
+		mask: linear-gradient(transparent 42%, #000 42% 58%, transparent 58%);
+		opacity: 0.65;
+		pointer-events: none;
+	}
+
+	.signal-landscape {
+		position: absolute;
+		inset: 0;
+	}
+
+	.signal-landscape::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, rgb(7 19 31 / 0.08), rgb(7 19 31 / 0.2));
+		pointer-events: none;
+	}
+
+	.signal-landscape :global(img),
+	.signal-detail :global(img) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	.signal-landscape :global(.signal-landscape-base) {
+		position: absolute;
+		inset: 0;
+		height: 100% !important;
+		object-position: 50% 50%;
+	}
+
+	.signal-detail {
+		position: absolute;
+		z-index: 3;
+		top: -2rem;
+		right: clamp(5%, 10vw, 12%);
+		width: clamp(14rem, 20vw, 20rem);
+		height: clamp(20rem, 31vw, 31rem);
+		border: 1px solid var(--color-cyan);
+		background: var(--color-night);
+		box-shadow: 0 1.25rem 2.5rem rgb(0 0 0 / 0.32);
+	}
+
+	.signal-detail :global(img) {
+		object-position: 50% 48%;
+	}
+
+	:global(.home-page > footer) {
+		margin-top: 0;
+		background: var(--color-night);
+		color: var(--color-hero-muted);
+	}
+
+	@media (max-width: 900px) {
+		.signal-stage { padding-top: clamp(3rem, 8vw, 5rem); }
+		.signal-stage h1 {
+			font-size: clamp(3rem, 8.2vw, 5.8rem);
+		}
+		.signal-intro {
+			grid-template-columns: minmax(0, 1fr) minmax(13rem, 16rem);
+			gap: 2.5rem;
+		}
+		.signal-links { gap: clamp(1rem, 2.8vw, 2rem); }
+		.signal-detail {
+			top: 1rem;
+			right: 7%;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.signal-hero { padding-inline: 1rem; }
+		.signal-nav {
+			align-items: flex-start;
+			min-height: auto;
+			padding: 0.85rem 0 0.75rem;
+		}
+		.signal-brand { width: 7.5rem; padding: 0.2rem 0; }
+		.signal-links {
+			display: grid;
+			grid-template-columns: repeat(3, auto);
+			gap: 0.4rem 1rem;
+			justify-content: end;
+			font-size: 0.78rem;
+		}
+		.signal-links a { min-height: 2.75rem; }
+		.signal-links a:first-child,
+		.signal-links a::after { display: none; }
+		.signal-stage { padding-top: 3.25rem; }
+		.signal-stage h1 {
+			font-size: clamp(3.55rem, 18vw, 5.2rem);
+			line-height: 0.86;
+			text-align: left;
+			text-wrap: balance;
+		}
+		.spectral-line { margin-top: 1.4rem; }
+		.signal-intro {
+			grid-template-columns: 1fr;
+			gap: 1.75rem;
+			padding-bottom: 7rem;
+		}
+		.signal-intro p { max-width: 34rem; }
+		.signal-actions {
+			grid-template-columns: 1fr auto;
+			align-items: center;
+		}
+		.signal-primary { padding-inline: 0.8rem; }
+		.signal-secondary { font-size: 0.9rem; }
+		.signal-imagery {
+			min-height: 23rem;
+			margin-inline: -1rem;
+		}
+		.signal-landscape :global(.signal-landscape-base) {
+			object-position: 55% 50%;
+		}
+		.signal-detail {
+			top: -5.75rem;
+			right: 1rem;
+			width: 39vw;
+			height: 14rem;
+		}
+	}
+
+	@media (max-width: 460px) {
+		.signal-nav { align-items: center; }
+		.signal-links { grid-template-columns: repeat(2, auto); column-gap: 0.8rem; }
+		.signal-stage h1 { font-size: clamp(3.15rem, 17vw, 4.5rem); }
+		.signal-actions { grid-template-columns: 1fr; }
+		.signal-secondary { text-align: left; }
+		.signal-intro { padding-bottom: 6rem; }
+		.signal-detail { width: 43vw; height: 12rem; }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.signal-links a::after,
+		.signal-primary,
+		.signal-secondary span { transition: none; }
+	}
+</style>

@@ -1,0 +1,10 @@
+{
+  "name": "Signal Horizon",
+  "path": "design/directions/02-direction.png",
+  "approved": true,
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "prompt": "SIGNAL HORIZON: LaserSETI desktop homepage using the approved palette and typography, an expansive centered headline, a horizontal photographic horizon with real station imagery, a spectral trace, a clear Help action, and a spacious two-column second fold without invented claims."
+}

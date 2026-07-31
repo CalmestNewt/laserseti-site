@@ -4,7 +4,26 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@font-face {
+	font-family: 'Rajdhani';
+	src: url('../assets/fonts/rajdhani-semibold.ttf') format('truetype');
+	font-display: swap;
+	font-style: normal;
+	font-weight: 600;
+}
+
 :root {
+	--color-night: #07131f;
+	--color-cyan: #25c7d9;
+	--color-coral: #ff6b57;
+	--color-yellow: #ffd166;
+	--color-signal-blue: #3568ff;
+	--color-hero-ink: #f4fbfc;
+	--color-hero-muted: #c7dadd;
+	--font-display: 'Rajdhani', sans-serif;
+	--font-body: var(--font-atkinson), sans-serif;
+	--hero-gutter: clamp(1.25rem, 3vw, 3rem);
+	--hero-rule: color-mix(in srgb, var(--color-cyan) 74%, transparent);
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;

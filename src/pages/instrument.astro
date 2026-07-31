@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import enclosureXRay from '../assets/projects/instrument/enclosure-x-ray.png';
+import instrumentAssembly from '../assets/projects/instrument/instrument-assembly.jpg';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="LaserSETI Instrument" description="How the LaserSETI instrument detects extrasolar laser pulses." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>The LaserSETI Instrument</h1>
+			<p>LaserSETI is designed to be the first practical all-sky, all-the-time SETI project, with instruments specially constructed to detect laser pulses originating outside our solar system, operating as a network at a dozen carefully chosen observatories around the world.</p>
+			<Image src={enclosureXRay} alt="Cutaway diagram of a LaserSETI instrument enclosure and its internal components" />
+			<p>Each instrument is made up of two wide-field, high-sensitivity cameras combined with a transmission grating that splits the incoming light into colors, much like a prism. The cameras use a modified version of the CCD readout technique called <a href="https://en.wikipedia.org/wiki/Time_delay_and_integration">Time Delay Integration</a>, which smears images out in one axis, but yields millisecond time resolution. The two cameras are looking in the same direction and oriented perpendicularly to allow for localization of events in both axes, as well as to provide additional confidence in observed events.</p>
+			<Image src={instrumentAssembly} alt="Two LaserSETI cameras and their electronics mounted inside an open enclosure" />
+			<p>Cost is critical to the goal of being the first successful all-sky project. The cameras, lenses, and electronics are “commercial off-the-shelf” (COTS) with only the transmission grating and stainless-steel enclosure being custom made. 3D printing is used extensively to bring all the components together in an optimal but low-cost system. Each instrument contains a powerful computer capable of analyzing the incoming data in real-time, enabling timely event alerts and avoiding costly storage and/or transmission costs.</p>
+
+			<h2>At A Glance</h2>
+			<table>
+				<tbody>
+					<tr><th scope="row">Observational Technique</th><td>Slit-less Spectroscopy</td></tr>
+					<tr><th scope="row">Instrument Field-of-View (FOV)</th><td>75 degrees in diameter<br />4395 <a href="https://en.wikipedia.org/wiki/Square_degree">square degrees</a> of area<br />(10.6% of celestial sphere)</td></tr>
+					<tr><th scope="row">Observatory FOV</th><td>120 degrees across<br />(30 degrees above horizon)</td></tr>
+					<tr><th scope="row">Instrument Data Rate</th><td>104 Mbps</td></tr>
+					<tr><th scope="row">Limiting Magnitude</th><td>~7.4 V mag (SNR = 5)</td></tr>
+					<tr><th scope="row">First Light</th><td>August 6, 2019</td></tr>
+					<tr><th scope="row">Laser Sensitivity Limit</th><td>5 light years for a<br />100 GW (500nm) laser*</td></tr>
+					<tr><th scope="row">Spatial Resolution</th><td>1.44 arcmin/pixel per instrument</td></tr>
+				</tbody>
+			</table>
+			<p>*A 100 GW laser is not feasible with current technology, but will likely be in the future. For instance, Breakthrough <a href="https://breakthroughinitiatives.org/concept/3">Starshot has proposed to use a 100 GW laser to propel spacecraft to Alpha Centauri.</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	th,
+	td {
+		padding: 0.75em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		text-align: left;
+		vertical-align: top;
+	}
+</style>

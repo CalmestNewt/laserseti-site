@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import annualCloudCoverage from '../assets/projects/observatories/annual-cloud-coverage.png';
+import globalPlacement from '../assets/projects/observatories/global-observatory-placement.jpg';
+import rfoInstruments from '../assets/projects/observatories/rfo-instruments.jpg';
+import rfoTelescope from '../assets/projects/observatories/rfo-40-inch-telescope.jpg';
+import rfoCrew from '../assets/projects/observatories/rfo-installation-crew.jpg';
+import puertoRicoInstruments from '../assets/projects/observatories/puerto-rico-instruments.png';
+import haleakalaVideo from '../assets/projects/observatories/haleakala-installation.m4v?url';
+import sedonaVideo from '../assets/projects/observatories/sedona-installation.mp4?url';
+import puertoRicoVideo from '../assets/projects/observatories/puerto-rico-installation.mp4?url';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Observatories – LaserSETI" description="The global network of LaserSETI observatories." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Observatories</h1>
+			<h2>Think Globally</h2>
+			<p>Theoretically, if you had two sites on opposite sides of the world that saw 180 degrees of the sky, you would have covered the whole sky. In practice, however, a number of realities make that goal a lot harder.</p>
+			<p>There’s more air/moisture/dust blocking the light as you go from looking straight up (1 <a href="https://en.wikipedia.org/wiki/Air_mass_(astronomy)">air mass</a> to be precise) to looking at the horizon. Also, almost everywhere on Earth, it’s not completely flat and featureless and things like trees, structures, and hills effectively raise the horizon. As a result, LaserSETI aims to cover down to 30 degrees above the horizon. That’s 1 extra air mass to see through which equates to 1 extra <a href="https://en.wikipedia.org/wiki/Magnitude_(astronomy)">magnitude</a> of light absorbed.</p>
+			<p>So now we need 6 observatories, 3 per hemisphere, to cover the sky. And the Earth’s surface is 70% water and not exactly evenly distributed–the Southern Hemisphere is over 80%! Position the observatories too near the coasts and we lose another magnitude from the <a href="https://en.wikipedia.org/wiki/Marine_layer">marine layer</a>, but coasts are where most of the people are and we need power (and ideally connectivity). But people also create light pollution, and since we integrate over a very large field-of-view, so we care about that a lot. We can’t see through the clouds, so we also want a site with as few cloudy days per year as possible.</p>
+			<figure>
+				<Image src={annualCloudCoverage} alt="World map showing annual cloud coverage" />
+				<figcaption>Map of Annual Cloud Coverage</figcaption>
+			</figure>
+			<p>But wait, there’s more! As Carl Sagan correctly pointed out, “extraordinary claims require extraordinary evidence” and a civilization beyond Earth certainly qualifies as an extraordinary claim. So if we’re going to claim a momentary pulse of light is proof of another civilization, we have to be able to show it wasn’t anything “local” since we can’t expect to go back and study it. For instance, there’s multiple <a href="https://en.wikipedia.org/wiki/Lidar">LIDARs</a> in orbit that could illuminate a single LaserSETI site, so we need to be observing every part of the sky from two different places on Earth. And the larger the separation between sites, the further out we could distinguish a “local” hoax. With the distance between Ferguson and Haleakala Observatories, LaserSETI can resolve a signal source 9 million km away… or 25 times further than the Moon!</p>
+			<p>Clearly if we had to maximize all of these variables simultaneously, there’d be no solution. Fortunately, humans have been building observatories for millennia, and modern ones for more than a century. While we are by no means limiting ourselves to considering only existing observatory sites, they’re an obvious first place to check and have generally been quite interested to host LaserSETI.</p>
+			<figure>
+				<Image src={globalPlacement} alt="Map of the planned global LaserSETI observatory network" />
+				<figcaption>LaserSETI’s global domination observatory plan</figcaption>
+			</figure>
+
+			<h2>Robert Ferguson Observatory</h2>
+			<p>Our first installation was chosen to be close to the Bay Area, so we could access it easily. Located in beautiful <a href="https://sugarloafpark.org/">Sugarloaf Ridge Park</a> in Sonoma County, California, they have a great facility and an even better staff.</p>
+			<figure>
+				<Image src={rfoInstruments} alt="LaserSETI instruments at Robert Ferguson Observatory on a spring day in 2023" />
+				<figcaption>RFO LaserSETI instruments as seen on a beautiful spring day in 2023</figcaption>
+			</figure>
+			<p>In addition to an enormous 40″ reflector telescope which <em>you can look through yourself</em>, RFO has an 8″ refractor and a 20″ Ritchey-Chretien used for research and imaging. The small army of volunteer docents run an impressive <a href="https://rfo.org/index.php/calendar/">outreach program</a> so everyone can learn, observe, and enjoy the cosmos.</p>
+			<figure>
+				<Image src={rfoTelescope} alt="The 40-inch reflector telescope at Robert Ferguson Observatory" />
+				<figcaption>40″ Reflector telescope at RFO</figcaption>
+			</figure>
+			<p>LaserSETI installation and first light happened on August 6th, 2019. We are eternally grateful to the outstanding volunteers who helped install–and continue to help maintain and operate–LaserSETI at this facility.</p>
+			<figure>
+				<Image src={rfoCrew} alt="Members of the LaserSETI installation crew at Robert Ferguson Observatory" />
+				<figcaption>Most, but not all, of the LaserSETI installation crew</figcaption>
+			</figure>
+			<div class="video-frame">
+				<iframe src="https://player.vimeo.com/video/663138924?h=e9c4b9f712&dnt=1&app_id=122963" title="LaserSETI Ferguson Observatory installation timelapse, August 2019" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+			<h2>Haleakala Observatory</h2>
+			<p>Officially called the <a href="https://about.ifa.hawaii.edu/facility/haleakala-observatories/">Haleakalā High Altitude Observatory Site</a>, it was Hawaii’s first astronomical research observatory. Owned by the <a href="https://about.ifa.hawaii.edu/">Institute for Astronomy</a> of the <a href="https://www.hawaii.edu/">University of Hawai’i</a>, at 3,050 meters (10,010 feet) above sea level, the summit of Haleakalā is above one third of the Earth’s <a href="https://en.wikipedia.org/wiki/Troposphere">troposphere</a> and has outstanding <a href="https://en.wikipedia.org/wiki/Astronomical_seeing">astronomical seeing</a> conditions–and scenery!</p>
+			<p>Watch the mesmerizing clouds while we teleport around the installation site using alien technology ;-D</p>
+			<figure>
+				<video controls preload="metadata"><source src={haleakalaVideo} type="video/mp4" />Your browser does not support this video.</video>
+				<figcaption>Haleakala installation time lapse video</figcaption>
+			</figure>
+
+			<h2>Sedona Observatory</h2>
+			<p>The third LaserSETI observatory was installed in Sedona, AZ in July 2024. This beautiful location with little light pollution proved to be the perfect spot for two new LaserSETI instruments. Although first light was delayed due to cloudy skies during installation, the new observatory is fully functional as of Spring 2025. See below for a time lapse of the team installing the stations!</p>
+			<video controls preload="metadata"><source src={sedonaVideo} type="video/mp4" />Your browser does not support this video.</video>
+
+			<h2>Puerto Rico Observatory</h2>
+			<p>In August of 2025, the LaserSETI team installed its 4th observatory on Isla Magueyes, Puerto Rico. Thanks to a collaboration with <a href="https://phl.upr.edu/about/abel_mendez">Dr. Abel Méndez</a> (University of Puerto Rico at Arecibo) and the <a href="https://www.uprm.edu/cima/">Department of Marine Sciences of UPR at Mayagüez</a>, the three instruments that comprise the observatory sit on this small islet off Puerto Rico’s Southern coast.</p>
+			<figure>
+				<Image src={puertoRicoInstruments} alt="Three labeled LaserSETI instruments at the Puerto Rico observatory" />
+			</figure>
+			<video controls preload="metadata"><source src={puertoRicoVideo} type="video/mp4" />Your browser does not support this video.</video>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	figure {
+		margin: 2em 0;
+	}
+	figcaption {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		text-align: center;
+	}
+	video,
+	.video-frame,
+	.video-frame iframe {
+		width: 100%;
+	}
+	video {
+		display: block;
+		border-radius: 8px;
+	}
+	.video-frame {
+		aspect-ratio: 16 / 9;
+		margin: 2em 0;
+	}
+	.video-frame iframe {
+		height: 100%;
+		border: 0;
+	}
+</style>

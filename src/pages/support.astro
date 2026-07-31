@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import fulfillmentPhoto from '../assets/projects/support/indiegogo-fulfillment.jpg';
+import holographixLogo from '../assets/site/partners/holographix.jpg';
+import idexFliLogo from '../assets/site/partners/idex-fli.jpg';
+import kubosLogo from '../assets/site/partners/kubos.jpg';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="Help – LaserSETI" description="Support the LaserSETI project and its all-sky optical SETI survey." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Help</h1>
+			<h2>Support</h2>
+			<p>If you want to help make LaserSETI happen, the quickest thing to do is <a href="https://www.seti.org/donate-laserseti">donate directly to the project</a>.</p>
+			<h2>Thanks!</h2>
+			<p>LaserSETI is entirely privately funded and simply wouldn’t be possible without the support of individuals who believe it’s important that this science be done and done right. Knowing this, a fundamental principle of LaserSETI’s design and operations is to treat cost as primary metric, because doing so increasing our chances of reaching our goal of scanning the skies All the Sky, All the Time. Our goal is to get the science done, not leave a beautiful but expensive design on the drawing board.</p>
+			<p>As a single but illustrative example, each LaserSETI instrument has 28 3D-printed components that take a total of about 27 days to print, if (only) it could print continuously. It would be much easier to outsource this work, including part cleaning, printer supplies, maintenance, and repair, but it saves thousands of dollars <em>per instrument</em> to do this work ourselves.</p>
+			<figure>
+				<Image src={fulfillmentPhoto} alt="LaserSETI team members fulfilling Indiegogo campaign perks" />
+				<figcaption>Perk fulfilment during the LaserSETI Indiegogo campaign</figcaption>
+			</figure>
+			<p>We are immensely grateful to the hundreds of people who supported the first buildout phase via <a href="https://www.indiegogo.com/projects/laser-seti-first-ever-all-sky-all-the-time-search#/">our crowdfunding campaign on Indiegogo</a>. It’s equally important to acknowledge the SETI Institute Board members and others who’ve made whose exceptional support has resulted in having four initial instruments instead of just two, as well as being able to move forward with our next ten instruments across the western hemisphere.</p>
+
+			<h2>Corporate Support</h2>
+			<p>LaserSETI also wouldn’t be possible without a vast array of specialized technology available on the market today, and we would especially like to thank the following companies for their exceptional support and dedication to quality.</p>
+			<div class="partner-logos">
+				<a href="https://holographix.com/"><Image src={holographixLogo} alt="Holographix" /></a>
+				<a href="https://flicamera.com/"><Image src={idexFliLogo} alt="IDEX FLI" /></a>
+				<a href="https://www.kubos.com/"><Image src={kubosLogo} alt="Kubos" /></a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	figure {
+		margin: 2em 0;
+	}
+	figcaption {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		text-align: center;
+	}
+	.partner-logos {
+		display: grid;
+		gap: 1em;
+		margin-top: 2em;
+	}
+	.partner-logos a {
+		display: block;
+	}
+</style>
