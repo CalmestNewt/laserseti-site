@@ -30,8 +30,8 @@ import stationPortraitTwo from '../assets/site/laser-seti-station-portrait-2.png
 					<Image src={laserSetiLogo} alt="LaserSETI" />
 				</a>
 				<div class="signal-links">
-					<a aria-current="page" href="/">Home</a>
-					<a href="/instrument">LaserSETI</a>
+					<a href="/instrument">Instrument</a>
+					<a href="/team">Team</a>
 					<a href="/observatories">Observatories</a>
 					<a href="/blog">Updates</a>
 					<a href="/support">Help</a>
@@ -286,6 +286,7 @@ import stationPortraitTwo from '../assets/site/laser-seti-station-portrait-2.png
 	.signal-landscape {
 		position: absolute;
 		inset: 0;
+		overflow: hidden;
 	}
 
 	.signal-landscape::after {
@@ -310,6 +311,14 @@ import stationPortraitTwo from '../assets/site/laser-seti-station-portrait-2.png
 		inset: 0;
 		height: 100% !important;
 		object-position: 50% 50%;
+		animation: galaxy-approach 21.3s ease-in-out infinite alternate;
+		transform-origin: 52% 48%;
+		will-change: transform;
+	}
+
+	@keyframes galaxy-approach {
+		from { transform: scale(1); }
+		to { transform: scale(1.13); }
 	}
 
 	.signal-detail {
@@ -366,7 +375,6 @@ import stationPortraitTwo from '../assets/site/laser-seti-station-portrait-2.png
 			font-size: 0.78rem;
 		}
 		.signal-links a { min-height: 2.75rem; }
-		.signal-links a:first-child,
 		.signal-links a::after { display: none; }
 		.signal-stage { padding-top: 3.25rem; }
 		.signal-stage h1 {
@@ -417,5 +425,6 @@ import stationPortraitTwo from '../assets/site/laser-seti-station-portrait-2.png
 		.signal-links a::after,
 		.signal-primary,
 		.signal-secondary span { transition: none; }
+		.signal-landscape :global(.signal-landscape-base) { animation: none; }
 	}
 </style>

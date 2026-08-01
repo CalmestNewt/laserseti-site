@@ -1,0 +1,224 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import eliotGillum from '../assets/profile/eliot-gillum.png';
+import franckMarchis from '../assets/profile/franck-marchis.png';
+import laurenSgro from '../assets/profile/lauren-sgro.png';
+import danielKuljis from '../assets/profile/daniel-kuljis.jpg';
+import tomEsposito from '../assets/profile/tom-esposito.jpg';
+import chrisRagsdale from '../assets/profile/chris-ragsdale.jpg';
+import jillTarter from '../assets/profile/jill-tarter.png';
+
+const team = [
+	{
+		name: 'Eliot Gillum',
+		role: 'Principal Investigator',
+		image: eliotGillum,
+		alt: 'Eliot Gillum, LaserSETI Principal Investigator',
+		bio: [
+			'Eliot joined the SETI Institute in 2015 to develop a new type of Optical SETI instrument. Prior to that, he was the Director of Engineering for Hotmail and Outlook.com at Microsoft. His experience includes scientific computing, signal processing, and he worked with a multimedia startup before joining Microsoft.',
+			'Passionate about computers and technology his whole life, Eliot graduated from Cornell University, BS in Computer Science. It was during an elective astronomy course, Life in the Universe, when he first met Frank Drake; in turn, leading him to an alumni talk by Jill Tarter the next year. Eliot was hooked on the study of life and the universe, particularly as embodied by the SETI Institute. After joining the SETI Institute, Eliot spent every spare moment exploring every aspect of the development of a new optical SETI telescope, from optical design, to candidate detection coding and data reduction, to vendor selection, to funding. Eliot’s background in software, distributed systems, automation, and heuristic design, has matched very well with expertise from other Institute scientists. With the explosion of discovery of habitable exoplanets, Eliot strongly believes the question is not, “Is there life out there?” but instead, “When, if ever, will we find it?” He feels that SETI has unimaginable potential to unify the human race, and while the outcome may be unknown, the journey of discovery is, itself, an incredible prize.'
+		]
+	},
+	{
+		name: 'Franck Marchis',
+		role: 'Project Lead & Principal Investigator of Saudi Arabia Collaboration',
+		image: franckMarchis,
+		alt: 'Franck Marchis, LaserSETI Project Lead',
+		bio: [
+			'Dr. Franck Marchis, distinguished for his role as a senior astronomer at the SETI Institute and as Chief Science Officer at Unistellar, is renowned for his significant contributions to astronomy and science outreach. Following his Ph.D. completion in France and his move to the U.S. in 2000, Marchis made groundbreaking discoveries including the first triple-asteroid system in 2005 and the direct imaging of a Jupiter-like exoplanet in 2015, utilizing advanced adaptive optics technologies. His work has been celebrated in major scientific journals and has led to the naming of asteroid (6639) Marchis in his honor.',
+			'In addition to his research, Marchis is an avid science communicator and entrepreneur, founding Unistellar in 2017 and Dope Space in 2023 to promote space science to the public. He has contributed to over 400 scientific publications and served on numerous prestigious committees, demonstrating his commitment to advancing the field of astronomy and fostering the next generation of scientists. His recognition as a fellow of the California Academy of Sciences in 2023 underscores his impact on both scientific discovery and education, making him a pivotal figure in the exploration of our universe.',
+			'Outside of work, Franck is a devoted father to both his children and dog, a CrossFit enthusiast, and an avid hiker and traveler who delights in exploring Earth’s diverse civilizations and cultures.'
+		]
+	},
+	{
+		name: 'Lauren Sgro',
+		role: 'Outreach Manager',
+		image: laurenSgro,
+		alt: 'Lauren Sgro, LaserSETI Outreach Manager',
+		bio: [
+			'Lauren Sgro is a Postdoctoral Fellow at the SETI institute, working alongside Unistellar to build their network of citizen astronomers and process the results that come from observers around the world. She currently leads this citizen science network’s Exoplanets Program, in which participants record transit data for both known and candidate exoplanets.',
+			'She graduated with her PhD in Physics from the University of Georgia in 2022, where she studied debris disks around red dwarfs. Lauren is also a science communicator and writer that has written for a variety of outlets, from student-run blogs to Sky & Telescope magazine. One of her favorite things about astronomy, and science in general, is sharing it with others whether through writing or public outreach events. In her copious leisure time, Lauren likes to read, practice circus arts, and spend time with her family.'
+		]
+	},
+	{
+		name: 'Daniel Kuljis',
+		role: 'Lead Manufacturing',
+		image: danielKuljis,
+		alt: 'Daniel Kuljis, LaserSETI Lead Manufacturing engineer',
+		bio: [
+			'Daniel Kuljis is a highly skilled engineer with an extensive background in the aerospace industry, specializing in optical test systems. His proficiency with Optical Test Equipment, Matlab, LabVIEW, and Microsoft Excel is underscored by a strong foundation in research, evidenced by his Master’s Degree in Applied Physics from CSU Long Beach. Kuljis’s career is marked by significant contributions to renowned companies such as Raytheon and Cruise, where he has applied his expertise to advance technological innovations and ensure precision in optical testing.',
+			'His professional journey is characterized by a dedication to excellence and a keen interest in the practical applications of physics in engineering. This combination of theoretical knowledge and practical skills makes Daniel an invaluable asset to any project focused on optical technologies within the aerospace sector.',
+			'Outside of his professional endeavors, Daniel is passionate about gardening, hiking, and video games. These interests reflect a well-rounded personality that values both the meticulous care required in gardening, the exploration and resilience fostered by hiking, and the strategic thinking and problem-solving skills honed through video games. Daniel Kuljis stands out as a dynamic individual, bridging the gap between rigorous scientific research and the pursuit of personal fulfillment and hobbies.'
+		]
+	},
+	{
+		name: 'Tom Esposito',
+		role: 'Science Pipeline Manager',
+		image: tomEsposito,
+		alt: 'Tom Esposito, LaserSETI Science Pipeline Manager',
+		bio: [
+			'Tom Esposito, a SETI research assistant and an assistant researcher at UC Berkeley, is advancing the fields of transient events, transiting exoplanetary systems, and planetary system formation. Leading a program that collaborates with citizen astronomers in the Unistellar Network, Esposito focuses on being the first to observe the newest explosive phenomena in the universe to engage the public in astronomy and aid in our understanding of cosmic physics at the most energetic levels. He leverages the same network to help confirm the existence and properties of rare, Jupiter-like transiting exoplanets with the UNITE program. His work extends to the direct imaging of circumstellar debris disks, providing insights into the dynamic interactions within young solar systems. Esposito’s research relies on developing methodologies and software tools (primarily in Python) for the processing and analysis of astronomical data.',
+			'Originally from Long Island, NY, Tom pursued his passion for physics with a bachelor’s degree at Georgetown University, further enriching his education with studies in Milan, Italy. He completed his Ph.D. in astronomy at UCLA before settling in the San Francisco Bay Area, where he continues to contribute to our understanding of the cosmos.',
+			'Outside the lab, Esposito is an avid soccer player, gardener, scuba diver, and traveler, sharing these adventures with his wife, Katie. His diverse interests and commitment to astronomy make him a multifaceted individual, contributing both to scientific discovery and to fostering a wider appreciation for the universe.'
+		]
+	},
+	{
+		name: 'Chris Ragsdale',
+		role: 'Mechanical Engineering',
+		image: chrisRagsdale,
+		alt: 'Chris Ragsdale, LaserSETI mechanical engineer',
+		bio: [
+			'A talented mechanical and aerospace engineer, Chris works with the Spectrum Technology Group. He earned a BS in mechanical and aerospace engineering from the Illinois Institute of Technology and an MS in aerospace engineering from the University of Maryland. Chris has worked on many different engineering projects ranging from unmanned aerial vehicle development to submarine sonar system redesign and updating efforts. His current interests lie in the commercialization of space, aerospace systems development, and technology ventures with a global impact.',
+			'Chris has a passion for entrepreneurship and innovative design. Enjoys 3D solid modeling and simulation of complex assemblies, and seeks to develop cutting edge and disruptive technologies and products. His specialties include Systems Engineering, Computational Fluid Dynamics (CFD), Finite Element Analysis (FEA), Engineering Design Methods, Product Development and Testing, Thermal Design and Simulation, MATLAB including Simulink, Solidworks, Siemens NX 7-9.'
+		]
+	},
+	{
+		name: 'Jill Tarter',
+		role: 'Senior Advisor',
+		image: jillTarter,
+		alt: 'Jill Tarter, LaserSETI Senior Advisor',
+		bio: [
+			'Dr. Jill Tarter is Chair Emeritus for SETI Research at the SETI Institute in Mountain View, California and serves as a member of the Board of Trustees for that institution. Tarter received her Bachelor of Engineering Physics Degree with Distinction from Cornell University and her Master’s Degree and a Ph.D. in Astronomy from the University of California, Berkeley. She has spent the majority of her professional career attempting to answer the old human question “Are we alone?” by searching for evidence of technological civilizations beyond Earth.',
+			'She served as Project Scientist for NASA’s SETI program, the High Resolution Microwave Survey and has conducted numerous observational programs at radio observatories worldwide. She is a Fellow of the AAAS, the California Academy of Sciences, and the Explorers Club, she was named one of the Time 100 Most Influential People in the World in 2004, and one of the Time 25 in Space in 2012, received a TED prize in 2009, two public service awards from NASA, multiple awards for communicating science to the public, and has been honored as a woman in technology. She is an Adjunct Professor in the Department of Physics and Astronomy at USC, Asteroid 74824 Tarter (1999 TJ16) has been named in her honor. She is the Jansky Lecturer in 2014. Since the termination of funding for NASA’s SETI program in 1993, she has served in a leadership role to design and build the Allen Telescope Array and to secure private funding to continue the exploratory science of SETI. Many people are now familiar with her work as portrayed by Jodie Foster in the movie Contact.'
+		]
+	}
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title="LaserSETI Team" description="Meet the scientists, engineers, and advisors behind LaserSETI." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<header class="page-intro">
+				<p class="eyebrow">The people behind the signal</p>
+				<h1>Team</h1>
+				<p>LaserSETI has been a team effort since it began in 2015. We would like to thank <a href="https://www.mysciencework.com/profile/gerry.harp">Gerry Harp</a>, Alan Holmes, <a href="https://en.wikipedia.org/wiki/Peter_Jenniskens">Peter Jenniskens</a>, <a href="https://en.wikipedia.org/wiki/Franck_Marchis">Franck Marchis</a>, and <a href="https://en.wikipedia.org/wiki/Seth_Shostak">Seth Shostak</a> for their input, feedback, and support.</p>
+				<p>Please see the current team members’ bios below.</p>
+			</header>
+
+			<div class="team-list">
+				{team.map((member, index) => (
+					<article class="profile">
+						<div class="profile-image">
+							<Image src={member.image} alt={member.alt} widths={[320, 480, 640]} sizes="(max-width: 760px) 100vw, 32vw" loading={index < 2 ? 'eager' : 'lazy'} />
+						</div>
+						<div class="profile-copy">
+							<p class="role">{member.role}</p>
+							<h2>{member.name}</h2>
+							{member.bio.map((paragraph) => <p>{paragraph}</p>)}
+						</div>
+					</article>
+				))}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 76rem;
+	}
+
+	.page-intro {
+		max-width: 62rem;
+		margin-bottom: clamp(3rem, 7vw, 6rem);
+	}
+
+	.eyebrow,
+	.role {
+		font-family: var(--font-display, "Avenir Next", sans-serif);
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.eyebrow,
+	.role {
+		color: var(--color-cyan, #00d7e7);
+	}
+
+	h1 {
+		margin-bottom: 1rem;
+		font-size: clamp(4rem, 11vw, 9rem);
+		line-height: 0.85;
+	}
+
+	.page-intro > p:not(.eyebrow) {
+		max-width: 72ch;
+	}
+
+	.team-list {
+		display: grid;
+		gap: clamp(4rem, 10vw, 8rem);
+	}
+
+	.profile {
+		display: grid;
+		grid-template-columns: minmax(15rem, 0.75fr) minmax(0, 1.35fr);
+		gap: clamp(2rem, 6vw, 5rem);
+		align-items: start;
+		padding-top: 1.25rem;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.profile:nth-child(even) {
+		grid-template-columns: minmax(0, 1.35fr) minmax(15rem, 0.75fr);
+	}
+
+	.profile:nth-child(even) .profile-image {
+		order: 2;
+	}
+
+	.profile-image {
+		position: relative;
+	}
+
+	.profile-image :global(img) {
+		display: block;
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border: 1px solid var(--color-cyan, #00d7e7);
+	}
+
+	.role {
+		margin: 0 0 0.45rem;
+		font-size: 0.78rem;
+		line-height: 1.35;
+	}
+
+	h2 {
+		margin: 0 0 1.5rem;
+		font-size: clamp(2.25rem, 5vw, 4.75rem);
+		line-height: 0.95;
+	}
+
+	.profile-copy p:not(.role) {
+		max-width: 68ch;
+		font-size: 1rem;
+		line-height: 1.65;
+	}
+
+	@media (max-width: 760px) {
+		.profile,
+		.profile:nth-child(even) {
+			grid-template-columns: 1fr;
+		}
+
+		.profile:nth-child(even) .profile-image {
+			order: initial;
+		}
+
+		.profile-image {
+			max-width: 30rem;
+		}
+	}
+</style>
